@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { CompanyComponent } from './company/company.component';
 import { ResourceComponent } from './resource/resource.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     CompanyComponent,
-    ResourceComponent
+    ResourceComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
