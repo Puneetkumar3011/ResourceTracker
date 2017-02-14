@@ -10,7 +10,7 @@ import { UserComponent } from './user/user.component';
 import { CompanyComponent } from './company/company.component';
 import { ResourceComponent } from './resource/resource.component';
 import { HomeComponent } from './home/home.component';
-import { SharedComponent } from './shared/shared.component';
+import { headerComponent } from './shared/header.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import { SharedComponent } from './shared/shared.component';
     CompanyComponent,
     ResourceComponent,
     HomeComponent,
-    SharedComponent
+    headerComponent
   ],
   imports: [
     BrowserModule,
