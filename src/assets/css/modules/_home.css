@@ -48,12 +48,4 @@
             }
         }
     }
-
-    &__btn{
-        position: absolute;
-        float: right;
-        top:0;
-        right:0;
-        margin: .6rem;
-    }
 }

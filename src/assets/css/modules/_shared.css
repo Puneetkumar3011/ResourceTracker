@@ -1,0 +1,10 @@
+.resLogo{
+    height: 5rem;
+    background-color: $baseFontColor;
+    border: 1px solid $baseOrange;
+
+    &__btn{
+        float: right;
+        margin: .6rem;
+    }
+}
