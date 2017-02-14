@@ -1,4 +1,5 @@
 .resLogo{
+    position: relative;
     height: 5rem;
     background-color: $baseFontColor;
     border: 1px solid $baseOrange;
@@ -9,7 +10,7 @@
     }
 }
 
-#resFooter{
+.resFooter{
   position: relative;
   margin-top: -5.5rem; /* negative value of footer height */
   height: 5rem;

@@ -1,5 +1,8 @@
 html, body {
   font-family: 'Roboto', sans-serif;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
   color: #555;
 } 
 img {
@@ -79,6 +82,7 @@ a:active {
   }
 } 
 .resLogo{
+    position: relative;
     height: 5rem;
     background-color: #555;
     border: 1px solid #e67e21;
@@ -87,7 +91,7 @@ a:active {
   float: right;
   margin: .6rem;
 } 
-#resFooter{
+.resFooter{
   position: relative;
   margin-top: -5.5rem; /* negative value of footer height */
   height: 5rem;
