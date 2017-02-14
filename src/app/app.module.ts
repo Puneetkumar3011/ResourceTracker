@@ -11,6 +11,7 @@ import { CompanyComponent } from './company/company.component';
 import { ResourceComponent } from './resource/resource.component';
 import { HomeComponent } from './home/home.component';
 import { headerComponent } from './shared/header.component';
+import { FooterComponent } from './shared/footer.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { headerComponent } from './shared/header.component';
     CompanyComponent,
     ResourceComponent,
     HomeComponent,
-    headerComponent
+    headerComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

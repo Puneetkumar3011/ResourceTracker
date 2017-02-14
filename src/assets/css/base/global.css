@@ -32,11 +32,3 @@ a:active {
   padding-bottom: 5rem;
   min-height: 100%;
 }
-
-#resFooter{
-  position: relative;
-  margin-top: -5rem; /* negative value of footer height */
-  height: 5rem;
-  clear: both;
-  background-color: $baseFontColor;
-}
