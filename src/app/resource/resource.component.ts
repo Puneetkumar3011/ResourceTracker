@@ -42,6 +42,7 @@ export class ResourceComponent implements OnInit {
   onSubmit(){
     if(this.resForm.value){
       this.resModel = {
+        id: String(Math.random()),
         barcode: this.resForm.value.barcode,
         description: this.resForm.value.description,
         make: this.resForm.value.resMake,

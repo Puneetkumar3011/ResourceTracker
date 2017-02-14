@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { UserModel } from './user.model';
+import { UserService } from './user.service';
 
 @Component({
   selector: 'app-user',
-  templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  templateUrl: './user.component.html'
 })
 export class UserComponent implements OnInit {
-  constructor() { }
+  constructor(private userSvc: UserService) { }
   userForm: FormGroup;
+  user: UserModel;
 
   ngOnInit() {
     this.userForm = new FormGroup({
@@ -26,8 +28,21 @@ export class UserComponent implements OnInit {
   }
 
   onSubmit() {
-        console.log(this.userForm);
+    if(this.userForm.value){
+        this.user = {
+          company: this.userForm.value.company,
+          dob: this.userForm.value.dob,
+          email: this.userForm.value.email,
+          firstName: this.userForm.value.firstName,
+          id: String(Math.random()),
+          lastName: this.userForm.value.lastName,
+          password: this.userForm.value.password
+        };
+        this.userSvc.addUser(this.user);
+        console.log(this.userSvc.getUserList());
         this.userForm.reset();
     }
+  }
+
 
 }
