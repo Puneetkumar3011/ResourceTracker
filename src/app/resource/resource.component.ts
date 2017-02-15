@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ResourceModel } from './resource.model';
 import { ResourceService } from './resource.service';
+import { AppSettings } from 'app/app.appsettings';
 
 @Component({
   selector: 'app-resource',
@@ -12,14 +13,13 @@ export class ResourceComponent implements OnDestroy, OnInit {
   resForm: FormGroup;
   resModel: ResourceModel;
   resTypes: Array<string> = [];
-  defaultedDdlText = '--- Select ---';
   selectedResTyp: string;
   resStates: Array<string> = [];
   selectedResState: string;
 
   ngOnInit() {
-    this.selectedResState = this.defaultedDdlText;
-    this.selectedResTyp = this.defaultedDdlText;
+    this.selectedResState = AppSettings.defaultedDdlText;
+    this.selectedResTyp = AppSettings.defaultedDdlText;
     this.resTypes = this.resService.getResTypes();
     this.resStates = this.resService.getResStates();
     this.resForm = new FormGroup({
@@ -57,8 +57,8 @@ export class ResourceComponent implements OnDestroy, OnInit {
 
   private resetForm(){
     this.resForm.reset();
-    this.selectedResTyp = this.defaultedDdlText;
-    this.selectedResState = this.defaultedDdlText;
+    this.selectedResTyp = AppSettings.defaultedDdlText;
+    this.selectedResState = AppSettings.defaultedDdlText;
   }
 
   ngOnDestroy() {

@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CompanyModel } from './company.model';
 import { CompanyService } from './company.service';
+import { AppSettings } from 'app/app.appsettings';
 
 @Component({
   selector: 'app-company',
@@ -10,13 +11,12 @@ import { CompanyService } from './company.service';
 export class CompanyComponent implements OnDestroy, OnInit {
   constructor(private compSvc: CompanyService) { }
   compForm: FormGroup;
-  busiDomains: Array<string>;
-  defaultDdlVal: string = '--- Select ---';
+  busiDomains: Array<string> = [];
   selectedBussDomain: string;
   company: CompanyModel;
 
   ngOnInit() {
-    this.selectedBussDomain = this.defaultDdlVal;
+    this.selectedBussDomain = AppSettings.defaultedDdlText;
     this.busiDomains = this.compSvc.getBussDomains();
     this.compForm = new FormGroup({
       name: new FormControl(null, Validators.required),
@@ -45,7 +45,7 @@ export class CompanyComponent implements OnDestroy, OnInit {
   }
 
   resetForm(){
-      this.selectedBussDomain = this.defaultDdlVal;
+      this.selectedBussDomain = AppSettings.defaultedDdlText;
       this.compForm.reset();
       console.log(this.compSvc.getCompanies());
   }
