@@ -1,14 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ResourceModel } from './resource.model';
 import { ResourceService } from './resource.service';
 
 @Component({
   selector: 'app-resource',
-  templateUrl: './resource.component.html',
-  styleUrls: ['./resource.component.css'],
+  templateUrl: './resource.component.html'
 })
-export class ResourceComponent implements OnInit {
+export class ResourceComponent implements OnDestroy, OnInit {
   constructor(private resService: ResourceService) { }
   resForm: FormGroup;
   resModel: ResourceModel;
@@ -60,6 +59,11 @@ export class ResourceComponent implements OnInit {
     this.resForm.reset();
     this.selectedResTyp = this.defaultedDdlText;
     this.selectedResState = this.defaultedDdlText;
+  }
+
+  ngOnDestroy() {
+    this.resTypes.length = 0;
+    this.resStates.length = 0;
   }
 
 }
