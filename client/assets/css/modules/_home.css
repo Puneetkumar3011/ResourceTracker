@@ -1,0 +1,51 @@
+.top-logo{
+    position: relative;
+
+    &__menu{
+        position: absolute;
+        top: 0;
+        right: 0;
+        text-align: left;
+        color: $menuColor; 
+    }
+
+    &__menu ul{
+        list-style-type: none;
+    }
+
+    &__menu li{
+        float: left;
+        text-transform: uppercase;
+        font-weight: $fontBold;
+        display: inline;
+        padding: 10px 20px; 
+    }
+
+    &__content{
+        position: absolute;
+        font-size: 1.0rem;
+        top: 50%;
+        left: 50%;
+        text-align: left;
+        color: $baseOrange;
+        transform: translate(-50%,-50%);
+
+        &__large{
+            display: none;
+            width: 100%;
+            font-size: 1.5rem;
+            @mixin atSmall{
+                display: block;
+            }
+        }
+
+        &__smaller{
+            display: block;
+            width: 80%;
+            font-size: 1.0rem;
+            @mixin atSmall{
+                display: none;
+            }
+        }
+    }
+}

@@ -13,17 +13,17 @@ gulp.task('default', function() {
 });
 
 gulp.task('styles', function() {
-  return gulp.src('./src/assets/css/styles.css')
+  return gulp.src('./client/assets/css/styles.css')
     .pipe(postcss([cssImport, mixins, cssvars, nested, autoprefixer]))
     .on('error', function(errorInfo) {
       console.log(errorInfo.toString());
       this.emit('end');
     })
-    .pipe(gulp.dest('./src/build/css'));
+    .pipe(gulp.dest('./public/stylesheets'));
 });
 
 gulp.task('watch', function() {
-  watch('./src/assets/css/**/*.css', function() {
+  watch('./client/assets/css/**/*.css', function() {
     gulp.start('styles');
   });
 
@@ -43,6 +43,6 @@ gulp.task('watch', function() {
 });
 
 gulp.task('cssInject', ['styles'], function() {
-  return gulp.src('./src/assets/css/styles.css')
+  return gulp.src('./client/assets/css/styles.css')
     .pipe(browserSync.stream());
 });
