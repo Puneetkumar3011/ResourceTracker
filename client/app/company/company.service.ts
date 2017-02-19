@@ -1,15 +1,34 @@
+import { Http, Response, Headers } from "@angular/http";    
+import { Injectable } from "@angular/core";
+import 'rxjs/Rx';
+import { Observable } from "rxjs";
 import { CompanyModel } from './company.model';
 
+@Injectable()
 export class CompanyService{
+    constructor(private http: Http) {}
     private companies: Array<CompanyModel> = [];
     private busiDomains: Array<string> = [];
 
-    public addCompany(company){
-        this.companies.push(company);
+    public addCompany(company: CompanyModel){
+        const headers = new Headers({'Content-Type': 'application/json'});
+        return this.http.post('http://localhost:3000/cpmpany', JSON.stringify(company), {headers: headers})
+            .map((response: Response) => {
+                var result = response.json();
+                company.id = result._id;
+                this.companies.push(company);
+                return company;
+            })
+            .catch((error: Response) => Observable.throw(error.json()));
     }
 
     public getCompanies(){
-        return this.companies;
+        this.http.get('http://localhost:3000/company')
+        .map((response: Response) => {
+                this.companies = response.json().data;
+                return this.companies;
+        })
+        .catch((error: Response) => Observable.throw(error.json()));
     }
 
     public getBussDomains(){
@@ -19,6 +38,5 @@ export class CompanyService{
         this.busiDomains.push('Retail');
         return this.busiDomains;
     }
-
 
 }

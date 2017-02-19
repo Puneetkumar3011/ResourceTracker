@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 var appRoutes = require('./routes/app');
+var appAdmin = require('./routes/admin/app');
 var userRoutes = require('./routes/user');
 
 var app = express();
@@ -32,6 +33,7 @@ app.use(function (req, res, next) {
     next();
 });
 
+app.use('/admin', appAdmin);
 app.use('/user', userRoutes);
 app.use('/', appRoutes);
 

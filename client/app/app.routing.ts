@@ -6,12 +6,16 @@ import { UserComponent } from "./user/user.component";
 import { CompanyComponent } from "./company/company.component";
 import { ResourceComponent } from "./resource/resource.component";
 
+import { AdminComponent } from "./admin/admin.component";
+
 const APP_ROUTES: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
     { path: 'user', component: UserComponent },
     { path: 'company', component: CompanyComponent },
-    { path: 'resource', component: ResourceComponent }
+    { path: 'resource', component: ResourceComponent },
+    { path: 'admin', component: AdminComponent }
+
 ];
 
 export const routing = RouterModule.forRoot(APP_ROUTES);
