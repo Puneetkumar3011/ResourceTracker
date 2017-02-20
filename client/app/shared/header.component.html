@@ -4,5 +4,6 @@
     <a [routerLink]="['/user']" class="lnk">Register</a>
     <a href="#" class="lnk lnk-primary">Signin</a>
     <a [routerLink]="['/resource']" class="lnk">Create Resource</a>
+    <a *ngIf="appReqType === 'Admin'" [routerLink]="['/resource']" class="lnk">Admin Entry</a>
   </div>
 </div>
