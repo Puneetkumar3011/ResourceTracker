@@ -1,8 +1,11 @@
-html, body {
+html {
   font-family: 'Roboto', sans-serif;
-  margin-left: auto;
-  margin-right: auto;
-  color: $baseFontColor;
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
 }
  
 img {
@@ -12,7 +15,7 @@ img {
 
 .divContainer{
   padding-top: 60px;
-  height:100vh;
+  height: (100vh - 60px);
 }
 
 .divMain{
