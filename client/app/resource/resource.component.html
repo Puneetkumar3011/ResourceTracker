@@ -1,49 +1,61 @@
 <div>
-  <form [formGroup]="resForm" (ngSubmit)="onSubmit()">
+  <form class="form-horizontal" [formGroup]="resForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="resType">Select Resource Type</label>
-       <br>
-       <div class="btn-group" dropdown>
-          <button id="single-button" type="button" class="btn btn-primary" dropdownToggle>
-            {{selectedResTyp}} <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" dropdownMenu aria-labelledby="simple-dropdown">
+      <label class="col-sm-3 control-label" for="resType">Resource Type</label>
+      <div class="col-sm-7 btn-group" dropdown>
+        <div class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" 
+             aria-expanded="false">{{selectedResTyp}} <span class="caret"></span></a>
+          <ul class="dropdown-menu">
             <li *ngFor="let type of resTypes">
-              <a class="dropdown-item" (click) = "changeResType(type)">{{type}}</a>
+              <a class="dropdown-item" (click)="changeResType(type)">{{type}}</a>
             </li>
           </ul>
+        </div>
       </div>
     </div>
     <div class="form-group">
-      <label for="resMake">Make</label>
-      <input type="text" id="resMake" class="form-control" formControlName="resMake">
-    </div>
-    <div class="form-group">
-      <label for="resModel">Model</label>
-      <input type="text" id="resModel" class="form-control" formControlName="resModel">
-    </div>
-    <div class="form-group">
-      <label for="barcode">Barcode</label>
-      <input type="text" id="barcode" class="form-control" formControlName="barcode">
-    </div>
-    <div class="form-group">
-      <label for="description">Description</label>
-      <input type="text" id="description" class="form-control" formControlName="description">
-    </div>
-    <div class="form-group">
-      <label for="resState">Select Resource State</label>
-      <br>
-      <div class="btn-group" dropdown>
-          <button id="single-button" type="button" class="btn btn-primary" dropdownToggle>
-            {{selectedResState}} <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" dropdownMenu aria-labelledby="simple-dropdown">
-            <li *ngFor="let state of resStates">
-              <a class="dropdown-item" (click) = "changeResState(state)">{{state}}</a>
-            </li>
-          </ul>
+      <label class="col-sm-3 control-label" for="resMake">Make</label>
+      <div class="col-sm-7">
+        <input type="text" id="resMake" class="form-control" formControlName="resMake">
       </div>
     </div>
-    <button class="btn btn-primary" type="submit" [disabled]="!resForm.valid">Submit</button>
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="resModel">Model</label>
+      <div class="col-sm-7">
+        <input type="text" id="resModel" class="form-control" formControlName="resModel">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="barcode">Barcode</label>
+      <div class="col-sm-7">
+        <input type="text" id="barcode" class="form-control" formControlName="barcode">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="description">Description</label>
+      <div class="col-sm-7">
+        <input type="text" id="description" class="form-control" formControlName="description">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="resState">Resource State</label>
+        <div class="col-sm-7 btn-group" dropdown>
+          <div class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" 
+              aria-expanded="false">{{selectedResState}} <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li *ngFor="let state of resStates">
+                <a class="dropdown-item" (click)="changeResState(state)">{{state}}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-3 col-sm-7">
+        <button class="btn btn-primary" type="submit" [disabled]="!resForm.valid">Submit</button>
+      </div>
+    </div>
   </form>
 </div>

@@ -1,33 +1,51 @@
 <div>
-  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <form class="form-horizontal" [formGroup]="userForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-       <label for="firstName">First Name</label>
-       <input type="text" id="firstName" class="form-control" formControlName="firstName">
+       <label class="col-sm-3 control-label" for="firstName">First Name</label>
+       <div class="col-sm-7">
+        <input type="text" id="firstName" class="form-control" formControlName="firstName">
+       </div>
     </div>
     <div class="form-group">
-       <label for="lastName">Last Name</label>
-       <input type="text" id="lastName" class="form-control" formControlName="lastName">
+       <label class="col-sm-3 control-label" for="lastName">Last Name</label>
+       <div class="col-sm-7">
+        <input type="text" id="lastName" class="form-control" formControlName="lastName">
+       </div>
     </div>
     <div class="form-group">
-       <label for="email">Email</label>
-       <input type="email" id="email" class="form-control" formControlName="email">
+       <label class="col-sm-3 control-label" for="email">Email</label>
+       <div class="col-sm-7">
+          <input type="email" id="email" class="form-control" formControlName="email">
+       </div>
     </div>
     <div class="form-group">
-       <label for="password">Password</label>
-       <input type="password" id="password" class="form-control" formControlName="password">
+       <label class="col-sm-3 control-label" for="password">Password</label>
+       <div class="col-sm-7">
+          <input type="password" id="password" class="form-control" formControlName="password">
+       </div>
     </div>
     <div class="form-group">
-       <label for="confirmPassword">Confirm Password</label>
-       <input type="password" id="confirmPassword" class="form-control" formControlName="confirmPassword">
+       <label class="col-sm-3 control-label" for="confirmPassword">Confirm Password</label>
+       <div class="col-sm-7">
+          <input type="password" id="confirmPassword" class="form-control" formControlName="confirmPassword">
+       </div>
     </div>
     <div class="form-group">
-       <label for="dob">Date of Birth</label>
-       <input type="date" id="dob" class="form-control" formControlName="dob">
+       <label class="col-sm-3 control-label" for="dob">Date of Birth</label>
+       <div class="col-sm-7">
+          <input type="date" id="dob" class="form-control" formControlName="dob">
+       </div>
     </div>
     <div class="form-group">
-       <label for="company">Company</label>
-       <input type="text" id="company" class="form-control" formControlName="company">
+       <label class="col-sm-3 control-label" for="company">Company</label>
+       <div class="col-sm-7">
+          <input type="text" id="company" class="form-control" formControlName="company">
+       </div>
     </div>
-    <button class="btn btn-primary" type="submit" [disabled]="!userForm.valid">Submit</button>
+    <div class="form-group">
+      <div class="col-sm-offset-3 col-sm-7">
+        <button class="btn btn-primary" type="submit" [disabled]="!userForm.valid">Submit</button>
+      </div>
+    </div>
   </form>
 </div>
