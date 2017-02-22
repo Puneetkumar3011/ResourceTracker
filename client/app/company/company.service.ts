@@ -12,7 +12,7 @@ export class CompanyService{
 
     public addCompany(company: CompanyModel){
         const headers = new Headers({'Content-Type': 'application/json'});
-        return this.http.post('http://localhost:3000/cpmpany', JSON.stringify(company), {headers: headers})
+        return this.http.post('http://localhost:3000/company', JSON.stringify(company), {headers: headers})
             .map((response: Response) => {
                 var result = response.json();
                 company.id = result._id;

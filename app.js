@@ -7,11 +7,12 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 var appRoutes = require('./routes/app');
+var bussDomain = require('./routes/admin/bussdomain');
 var appAdmin = require('./routes/admin/app');
 var userRoutes = require('./routes/user');
 
 var app = express();
-mongoose.connect('localhost:27017/node-angular');
+mongoose.connect('localhost:27017/ResTracker');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -32,7 +33,7 @@ app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Methods', 'POST, GET, PATCH, DELETE, OPTIONS');
     next();
 });
-
+app.use('/admin/ApiBusiDomain', bussDomain);
 app.use('/admin', appAdmin);
 app.use('/user', userRoutes);
 app.use('/', appRoutes);

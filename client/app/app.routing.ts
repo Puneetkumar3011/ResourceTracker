@@ -7,6 +7,7 @@ import { CompanyComponent } from "./company/company.component";
 import { ResourceComponent } from "./resource/resource.component";
 
 import { AdminComponent } from "./admin/admin.component";
+import { ADMIN_ROUTES } from "./admin/admin.route";
 
 const APP_ROUTES: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -14,8 +15,7 @@ const APP_ROUTES: Routes = [
     { path: 'user', component: UserComponent },
     { path: 'company', component: CompanyComponent },
     { path: 'resource', component: ResourceComponent },
-    { path: 'admin', component: AdminComponent }
-
+    { path: 'admin', component: AdminComponent, children: ADMIN_ROUTES }
 ];
 
 export const routing = RouterModule.forRoot(APP_ROUTES);

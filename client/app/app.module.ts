@@ -16,6 +16,8 @@ import { headerComponent } from './shared/header.component';
 import { FooterComponent } from './shared/footer.component';
 
 import { AdminComponent } from './admin/admin.component';
+import { BussDomainComponent } from "./admin/businessdomain/bussdomain.component";
+import { AdminRoleComponent } from "./admin/role/admin.role.component";
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { AdminComponent } from './admin/admin.component';
         HomeComponent,
         headerComponent,
         FooterComponent,
-        AdminComponent
+        AdminComponent,
+        BussDomainComponent,
+        AdminRoleComponent
     ],
     imports: [
         BrowserModule,
