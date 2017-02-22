@@ -9,7 +9,7 @@ export class BussDomainService{
     private busiDomains: Array<any> = [];
 
     public getBussDomain(){
-        return this.http.get('http://localhost:3000/admin/ApiBusiDomain')
+        return this.http.get('http://localhost:3000/api/admin/bussdomain')
         .map((response: Response) => {
             return response.json().obj;
         })
@@ -21,7 +21,7 @@ export class BussDomainService{
             {'Content-Type': 'application/json',
               'Accept': 'application/json'
             });
-        return this.http.post('http://localhost:3000/admin/ApiBusiDomain', 
+        return this.http.post('http://localhost:3000/api/admin/bussdomain', 
                                 JSON.stringify(bussDomain), 
                                 {headers: headers})
             .map((response: Response) => {

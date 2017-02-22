@@ -33,9 +33,9 @@ app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Methods', 'POST, GET, PATCH, DELETE, OPTIONS');
     next();
 });
-app.use('/admin/ApiBusiDomain', bussDomain);
+app.use('/api/admin/bussdomain', bussDomain);
+app.use('/api/user', userRoutes);
 app.use('/admin', appAdmin);
-app.use('/user', userRoutes);
 app.use('/', appRoutes);
 
 // catch 404 and forward to error handler

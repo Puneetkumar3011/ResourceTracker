@@ -20,7 +20,7 @@ router.get('/', function (req, res, next) {
 
 router.post('/', function (req, res, next) {
     var bussDomain = new BussDomain({
-        name: req.body.fullName,
+        name: req.body.name,
         description: req.body.description
     });
     bussDomain.save(function (err, result) {

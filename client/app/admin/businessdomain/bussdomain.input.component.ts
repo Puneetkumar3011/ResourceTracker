@@ -13,7 +13,7 @@ export class BussDomainInputComponent implements OnInit{
 
     ngOnInit(){
         this.bussDomForm = new FormGroup({
-        fullName: new FormControl(null, Validators.required),
+        name: new FormControl(null, Validators.required),
         description: new FormControl(null, Validators.required)
     });
     }
@@ -23,7 +23,7 @@ export class BussDomainInputComponent implements OnInit{
     if(this.bussDomForm.value){
       var bussDomain = {
         description: this.bussDomForm.value.description,
-        fullName: this.bussDomForm.value.fullName
+        name: this.bussDomForm.value.name
       };
       this.bussDomainSvc.addBussDomain(bussDomain).subscribe(
                     result => console.log(result)
