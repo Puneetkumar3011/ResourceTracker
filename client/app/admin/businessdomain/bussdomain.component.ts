@@ -44,8 +44,11 @@ export class BussDomainComponent implements OnInit{
         }
     }
 
-    onBussDomainDelete(bussDomain: any) : void{
-
+    public onBussDomainDelete(bussDomain: any) : void{
+        this.bussDomainSvc.deleteBussDomain(bussDomain)
+            .subscribe(function(result){
+                console.log(result);
+            });
     }
 
 }

@@ -55,4 +55,14 @@ export class BussDomainService{
                 return Observable.throw(error.json()); 
              });
     }
+
+    deleteBussDomain(bussDomain: any) {
+        return this.http.delete('http://localhost:3000/api/admin/bussdomain/' + bussDomain.id)
+            .map(function(response: Response) { 
+                return response.json();
+            })
+            .catch(function(error: Response) { 
+                return Observable.throw(error.json())
+            });
+    }
 }
