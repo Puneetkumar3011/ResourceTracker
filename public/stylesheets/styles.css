@@ -96,3 +96,8 @@ img {
   background-color: #555;
   border: 1px solid #e67e21;
 }
+
+.modal-common { 
+    width: 90rem; 
+    top:18rem;
+  }

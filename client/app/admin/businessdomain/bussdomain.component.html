@@ -1,17 +1,46 @@
-<div class="container">
-    <h2>Business Domains</h2>            
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Detail</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let bussDomain of bussDomains">
-                    <td>{{bussDomain.name}}</td>
-                    <td>{{bussDomain.description}}</td>
-                </tr>
-            </tbody>
-    </table>
+<div>
+    <div class="container">
+        <h2>Business Domains</h2>            
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let bussDomain of bussDomains; trackBy: bussDomain?._id"> 
+                        <td>{{bussDomain.name}}</td>
+                        <td>{{bussDomain.description}}</td>
+                        <td><button type="button" class="btn btn-link" (click)="modal.open()">Edit</button></td>
+                        <td><button type="button" class="btn btn-link" (click)="onBussDomainDelete(bussDomain)">Delete</button></td>
+                        <modal #modal cssClass="modal-common">
+                            <modal-header [show-close]="true">
+                                <h4 class="modal-title">Business Domain</h4> 
+                            </modal-header>
+                            <modal-body>
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label" for="name">Business Domain Name</label>
+                                    <div class="col-sm-6">
+                                    <input type="text" [(ngModel)]="bussDomain.name" id="name" class="form-control">
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label" for="description">Business Domain Description</label>
+                                    <div class="col-sm-6">
+                                    <input type="text" [(ngModel)]="bussDomain.description" id="description" class="form-control">
+                                    </div>
+                                </div>
+                                <br>
+                            </modal-body>
+                            <modal-footer>
+                                <button type="button" class="btn btn-default" data-dismiss="modal" (click)="modal.dismiss()">Cancel</button>
+                                <button type="button" class="btn btn-primary" (click)="updateDomain(bussDomain, modal)">Ok</button>
+                            </modal-footer>
+                        </modal>
+                    </tr>
+                </tbody>
+        </table>
+    </div>
 </div>

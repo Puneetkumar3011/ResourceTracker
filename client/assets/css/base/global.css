@@ -22,3 +22,9 @@ img {
   padding-bottom: 5rem;
   min-height: 100%;
 }
+
+/*Model css*/
+.modal-common { 
+    width: 90rem; 
+    top:18rem;
+  }
